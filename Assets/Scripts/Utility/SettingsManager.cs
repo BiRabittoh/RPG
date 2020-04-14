@@ -99,7 +99,7 @@ public class SettingsManager : MonoBehaviour
                 save.fighting, lastPosition, lastRotation, save.timerfloat);
 
             Time.timeScale = 1f;
-            SceneManager.LoadScene(save.currentLevel);
+            SceneManager.LoadScene("Level" + save.currentLevel);
         } else
         {
             Debug.Log("No file found.");

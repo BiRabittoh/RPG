@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class Save
 {
-    public string currentLevel;
+    public int currentLevel;
     public float posx, posy, posz;
     public float rot0, rot1, rot2, rot3;
     public List<string> enemiesKilled;

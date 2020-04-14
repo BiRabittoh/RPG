@@ -39,7 +39,7 @@ public class GameMaster : Singleton<GameMaster>
     private Quaternion lastRotation;
     public bool loaded = false;
 
-    private string currentLevel = "Level0";
+    public int currentLevel = 0;
     
     private string[] partyNames = { "Paladin", "Archer", "Boxer", "Mage" };
     private Stats tempStats;
@@ -105,7 +105,7 @@ public class GameMaster : Singleton<GameMaster>
             inventory.addInventory(battle.enemyItems);
 
             killedEnemies.Add(fighting);
-            SceneManager.LoadScene(currentLevel);
+            SceneManager.LoadScene("Level" + currentLevel);
         } else //Lost Battle
         {
             SceneManager.LoadScene("GameOver");
@@ -204,7 +204,7 @@ public class GameMaster : Singleton<GameMaster>
         return save;
     }
 
-    public void LoadManager(string cl, List<string> ke, int g, Dictionary<string, Stats> p,Inventory i, string f, Vector3 pos, Quaternion rot, float timerfloat)
+    public void LoadManager(int cl, List<string> ke, int g, Dictionary<string, Stats> p,Inventory i, string f, Vector3 pos, Quaternion rot, float timerfloat)
     {
         loaded = true;
         currentLevel = cl;
@@ -221,7 +221,7 @@ public class GameMaster : Singleton<GameMaster>
     public void resetGame()
     {
         loaded = false;
-        currentLevel = "Level0";
+        currentLevel = 0;
         killedEnemies = new List<string>();
         gold = 0;
         party = new Dictionary<string, Stats>();

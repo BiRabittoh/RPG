@@ -1,18 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Boss : MonoBehaviour
+public class Boss : NPC
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string bossType;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void onDisable(){
+        SceneManager.LoadScene(++GameMaster.Instance.currentLevel);
     }
 }
