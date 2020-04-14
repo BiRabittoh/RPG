@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Brady : Boss
+public class Brady : BadGuy
 {
     public override string Combat_AI()
     {

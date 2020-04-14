@@ -160,7 +160,7 @@ public class OverworldUIManager : UIManager
         
         for(int i = 0; i < 3; i++)
         {
-            UI.setSLButtonText(panel[(int)Panel.Save].transform.GetChild(i).GetComponent<Button>(), i);
+            UI.setSLButtonText(panel[(int)Panel.Save].transform.GetChild(i).GetComponent<Button>(), i, false);
         }
 
     }
@@ -170,7 +170,7 @@ public class OverworldUIManager : UIManager
         
         for (int i = 0; i < 3; i++)
         {
-            UI.setSLButtonText(panel[(int)Panel.Load].transform.GetChild(i).GetComponent<Button>(), i);
+            UI.setSLButtonText(panel[(int)Panel.Load].transform.GetChild(i).GetComponent<Button>(), i, true);
         }
     }
     private void handleSettings()

@@ -19,13 +19,18 @@ public static class UI
     public static float BattleSpeed = PlayerPrefs.GetFloat("BattleSpeed", 1f);
     public static bool displaying_text = false;
 
-    public static void setSLButtonText(Button btn, int slot)
+    public static void setSLButtonText(Button btn, int slot, bool load)
     {
+        Debug.Log("filling button " + btn.ToString());
         int seconds;
         DateTime dt = GetSlotDateTime(slot, out seconds);
         if(dt == default)
         {
-            btn.enabled = false;
+            if(load){
+                btn.enabled = false;
+            } else {
+                btn.enabled = true;
+            }
             btn.GetComponentInChildren<Text>().text = "Empty";
         } else
         {

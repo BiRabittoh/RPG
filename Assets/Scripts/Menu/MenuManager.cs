@@ -54,7 +54,7 @@ public class MenuManager : MonoBehaviour
             for (int i = 0; i < loadPanel.transform.childCount; i++)
             {
                 btn = loadPanel.transform.GetChild(i).GetComponent<Button>();
-                UI.setSLButtonText(btn, i);
+                UI.setSLButtonText(btn, i, true);
             }
             loadPanel.SetActive(true);
         }
