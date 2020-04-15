@@ -43,9 +43,9 @@ public class MenuManager : MonoBehaviour
 
     public void LoadGame()
     {
+        hideAllPanels();
         if(currentPanel == Panel.Load)
         {
-            hideAllPanels();
             currentPanel = Panel.None;
         } else
         {
@@ -63,9 +63,9 @@ public class MenuManager : MonoBehaviour
 
     public void Credits()
     {
+        hideAllPanels();
         if (currentPanel == Panel.Credits)
         {
-            hideAllPanels();
             currentPanel = Panel.None;
         }
         else
@@ -77,9 +77,9 @@ public class MenuManager : MonoBehaviour
 
     public void Settings()
     {
+        hideAllPanels();
         if (currentPanel == Panel.Settings)
         {
-            hideAllPanels();
             currentPanel = Panel.None;
         }
         else
