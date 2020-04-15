@@ -20,10 +20,12 @@ public class Orc : BadGuy
         //attack a random goodGuy
         Fighter[] temp = GameObject.Find("BattleManager").GetComponent<BattleManager>().getGuys(false);
         bool output;
+        string str;
         do
         {
-            return AbilityDB.Process(this, new Attack(), temp[Random.Range(0, temp.Length)], true, out output);
+            str = AbilityDB.Process(this, new Attack(), temp[Random.Range(0, temp.Length)], true, out output);
         } while (output == false);
+        return str;
     }
 }
 

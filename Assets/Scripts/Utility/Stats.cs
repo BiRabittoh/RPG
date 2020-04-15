@@ -67,7 +67,6 @@ public class Stats
         name = key;
         abilities = new List<Ability>();
         abilities.Add(new Attack());
-        abilities.Add(new Defend());
         switch (key)
         {
             case "Paladin":
@@ -77,6 +76,7 @@ public class Stats
                 def = maxDEF = 63;
                 agl = maxAGL = 30;
                 lck = maxLCK = 15;
+                abilities.Add(new Defend());
                 break;
             case "Archer":
                 hp = maxHP = 400;
@@ -85,8 +85,8 @@ public class Stats
                 def = maxDEF = 50;
                 agl = maxAGL = 35;
                 lck = maxLCK = 40;
+                abilities.Add(new Defend());
                 abilities.Add(new Heal());
-                abilities.Add(new HealBig());
                 abilities.Add(new ReviveHalf());
                 break;
             case "Boxer":
@@ -96,6 +96,7 @@ public class Stats
                 def = maxDEF = 80;
                 agl = maxAGL = 28;
                 lck = maxLCK = 25;
+                abilities.Add(new Defend());
                 break;
             case "Mage":
                 hp = maxHP = 375;
@@ -105,7 +106,7 @@ public class Stats
                 agl = maxAGL = 32;
                 lck = maxLCK = 5;
                 abilities.Add(new HealBig());
-                abilities.Add(new HealGreat());
+                abilities.Add(new FireBall());
                 abilities.Add(new ReviveFull());
                 break;
             case "Orc":
@@ -131,14 +132,18 @@ public class Stats
                 def = maxDEF = 60;
                 agl = maxAGL = 30;
                 lck = maxLCK = 35;
+                abilities.Add(new FireBall());
+                abilities.Add(new HealBig());
                 break;
             case "Ganfaul":
                 hp = maxHP = 2000;
-                mp = maxMP = 500;
+                mp = maxMP = 700;
                 atk = maxATK = 55;
                 def = maxDEF = 60;
                 agl = maxAGL = 32;
                 lck = maxLCK = 30;
+                abilities.Add(new FireBall());
+                abilities.Add(new HealBig());
                 break;
             default:
 

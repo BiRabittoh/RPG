@@ -23,7 +23,7 @@ public class Attack : Ability
         }
         string str = source + " attacks " + target;
         //number logic
-        double prob, crit = 0, danno = 0;
+        double prob, crit = 0, damage = 0;
         bool didCrit = false;
 
         prob = 3 * Math.Log(source.stats.AGL / target.stats.AGL) + 87;
@@ -42,13 +42,13 @@ public class Attack : Ability
                 didCrit = true;
             }
             
-            danno = 27.241 * Math.Log(source.stats.ATK / source.stats.DEF) + 148.78 + crit;
+            damage = 27.241 * Math.Log(source.stats.ATK / source.stats.DEF) + 148.78 + crit;
 
-            danno += (danno * UnityEngine.Random.Range(-5, 5) / 100);
+            damage += (damage * UnityEngine.Random.Range(-5, 5) / 100);
             
-            target.stats.HP -= danno;
+            target.stats.HP -= damage;
         }
-        UI.ShowDamage(target, (int)danno, didCrit);
+        UI.ShowDamage(target, (int)damage, didCrit);
         source.animator.SetTrigger("Attack");
         output = true;
         return str;

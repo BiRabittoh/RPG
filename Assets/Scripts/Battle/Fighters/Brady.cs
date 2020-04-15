@@ -6,7 +6,16 @@ public class Brady : BadGuy
 {
     public override string Combat_AI()
     {
-        throw new System.NotImplementedException();
+        //attack a random goodGuy
+        Fighter[] ggs = GameObject.Find("BattleManager").GetComponent<BattleManager>().getGuys(false);
+        List<Ability> abs = stats.GetAbilities();
+        bool output;
+        string str;
+        do
+        {
+            str = AbilityDB.Process(this, abs[Random.Range(0, abs.Count)], ggs[Random.Range(0, ggs.Length)], true, out output);
+        } while (output == false);
+        return str;
     }
 
     public Brady()
