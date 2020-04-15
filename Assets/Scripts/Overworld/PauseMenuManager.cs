@@ -4,12 +4,13 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour
 {
     public OverworldUIManager ui;
-    
+    public DialogueManager dm;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ui.showPause(togglePause());
+            if(dm.alreadyTalking == null)
+                ui.showPause(togglePause());
         }
         
     }
