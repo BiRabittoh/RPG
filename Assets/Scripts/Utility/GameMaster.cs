@@ -232,7 +232,7 @@ public class GameMaster : Singleton<GameMaster>
         fighting = f;
         lastPosition = pos;
         lastRotation = rot;
-        timer = timerfloat; //i may need to initialize this with new first.
+        timer = timerfloat;
         Debug.Log("loading scene Level" + currentLevel + ", fighting: " + fighting);
     }
 
