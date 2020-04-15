@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameMaster : Singleton<GameMaster>
 {
-    #region Pubblica
+    #region Public
     private Dictionary<string, Stats> party;
     public List<Stats> Party
     {
@@ -26,7 +23,9 @@ public class GameMaster : Singleton<GameMaster>
     [Header("Inventory")]
     public int gold = 0;
     public Inventory inventory;
+    public bool loaded = false;
 
+    public int currentLevel = 0;
     #endregion
     #region Private
     private float timer;
@@ -37,9 +36,6 @@ public class GameMaster : Singleton<GameMaster>
     private string enemyType;
     private Vector3 lastPosition;
     private Quaternion lastRotation;
-    public bool loaded = false;
-
-    public int currentLevel = 0;
     
     private string[] partyNames = { "Paladin", "Archer", "Boxer", "Mage" };
     private List<string> bossNames = new List<string>{ "Brady", "Ganfaul" };
@@ -51,14 +47,7 @@ public class GameMaster : Singleton<GameMaster>
         //start timer
         timer = 0;
 
-        //create party
-        party = new Dictionary<string, Stats>();
-
-        //add members
-        foreach(string st in partyNames)
-        {
-            addToParty(st);
-        }
+        initParty(partyNames);
 
         //create inventory
         inventory = new Inventory();
@@ -131,6 +120,7 @@ public class GameMaster : Singleton<GameMaster>
             case "Battle":
                 break;
             #endregion
+
             #region Battaglia vinta o ritorno all'overworld
             case "Level0":
             case "Level1":
@@ -155,6 +145,7 @@ public class GameMaster : Singleton<GameMaster>
                 player.transform.SetPositionAndRotation(lastPosition, lastRotation);
                 break;
             #endregion
+
             #region Battaglia persa
             case "Menu":
 
@@ -163,6 +154,7 @@ public class GameMaster : Singleton<GameMaster>
 
                 break;
             #endregion
+
             #region Altro
             default:
                 break;
@@ -179,13 +171,28 @@ public class GameMaster : Singleton<GameMaster>
     #endregion
 
     #region Party Management
-    public void addToParty(string name)
-    {
-        party.Add(name, new Stats(name));
+    private void initParty(string[] names){
+        party = new Dictionary<string, Stats>();
+        foreach(string s in names)
+        {
+            addToParty(s);
+        }
     }
-    public void removeFromParty(string name)
+    public bool addToParty(string name)
     {
-        party.Remove(name);
+        if(!party.ContainsKey(name)){
+            party.Add(name, new Stats(name));
+            return true;
+        }
+        return false;
+    }
+    public bool removeFromParty(string name)
+    {
+        if(party.ContainsKey(name)){
+            party.Remove(name);
+        return true;
+        }
+        return false;
     }
     #endregion
 
@@ -233,11 +240,7 @@ public class GameMaster : Singleton<GameMaster>
         currentLevel = 0;
         killedEnemies = new List<string>();
         gold = 0;
-        party = new Dictionary<string, Stats>();
-        foreach(string s in partyNames)
-        {
-            party.Add(s, new Stats(s));
-        }
+        initParty(partyNames);
         inventory = new Inventory();
         fighting = "";
         timer = 0;
