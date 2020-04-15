@@ -22,6 +22,7 @@ public class OverworldUIManager : UIManager
     [SerializeField] private List<GoodGuy> party;
     [SerializeField] private GameObject pause_panel = null;
     [SerializeField] private GameObject[] panel = null;
+    [SerializeField] private Text goldText = null;
     public Text desc_text = null;
     public enum Panel
     {
@@ -53,6 +54,7 @@ public class OverworldUIManager : UIManager
     void Start()
     {
         gm = GameMaster.Instance;
+        goldText.text = gm.gold + "g";
         sm = panel[(int)Panel.Settings].GetComponent<SettingsManager>();
         desc_text = panel[(int)Panel.Description].GetComponentInChildren<Text>();
 
@@ -134,7 +136,7 @@ public class OverworldUIManager : UIManager
     }
 
     private void handleInventory()
-    { 
+    {
         //get inventory buttons object
         Transform tmp = panel[(int)Panel.Inventory].transform.GetChild(1);
 
