@@ -33,6 +33,7 @@ public class BattleUIManager : UIManager
 
     private void Start()
     {
+        UI.showCursor(true);
         gm = GameMaster.Instance;
         battle = GetComponent<BattleManager>();
 

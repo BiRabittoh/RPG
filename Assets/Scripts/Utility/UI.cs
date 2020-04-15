@@ -183,4 +183,13 @@ public static class UI
             tmpmp.GetComponentInChildren<Slider>().value = (float)(s.MP / s.MaxMP);
         }
     }
+
+    public static void showCursor(bool toggle){
+        Cursor.visible = toggle;
+        if(toggle){
+            Cursor.lockState = CursorLockMode.None;
+        } else {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
 }

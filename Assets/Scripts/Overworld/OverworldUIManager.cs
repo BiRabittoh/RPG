@@ -41,9 +41,11 @@ public class OverworldUIManager : UIManager
         hideAllPanels();
         if (onOff)
         {
+            UI.showCursor(true);
             pause_panel.SetActive(true);
         } else
         {
+            UI.showCursor(false);
             currentPanel = 0;
             pause_panel.SetActive(false);
         }

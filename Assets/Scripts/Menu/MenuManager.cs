@@ -22,6 +22,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start() //remember this is shared between gameover and main menu
     {
+        UI.showCursor(true);
         //set music menu
         mixer.SetFloat("MusicVolume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", 0.75f)) * 20);
         mixer.SetFloat("SfxVolume", Mathf.Log10(PlayerPrefs.GetFloat("SfxVolume", 0.75f)) * 20);
