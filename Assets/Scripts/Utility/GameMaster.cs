@@ -217,6 +217,7 @@ public class GameMaster : Singleton<GameMaster>
         save.rot2 = t.rotation.z;
         save.rot3 = t.rotation.w;
         save.timerfloat = timer;
+        Debug.Log("saving scene Level" + currentLevel + ", fighting: " + fighting);
         return save;
     }
 
@@ -232,6 +233,7 @@ public class GameMaster : Singleton<GameMaster>
         lastPosition = pos;
         lastRotation = rot;
         timer = timerfloat; //i may need to initialize this with new first.
+        Debug.Log("loading scene Level" + currentLevel + ", fighting: " + fighting);
     }
 
     public void resetGame()
