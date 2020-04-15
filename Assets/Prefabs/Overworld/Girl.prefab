@@ -683,9 +683,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1547006139847285768}
   - component: {fileID: 8931220952174735730}
-  - component: {fileID: 2531946836594585316}
   - component: {fileID: 2531946836594585318}
   - component: {fileID: 2531946836594585317}
+  - component: {fileID: 6857087520954542699}
   m_Layer: 0
   m_Name: Girl
   m_TagString: Untagged
@@ -728,22 +728,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2531946836594585316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2531946836594585115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e1de3b45e291714089648173c9d9f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Girl
-    sound: {fileID: 0}
-    sentences: []
 --- !u!136 &2531946836594585318
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -772,6 +756,34 @@ CapsuleCollider:
   m_Height: 0.17
   m_Direction: 1
   m_Center: {x: 0, y: 0.08, z: 0}
+--- !u!114 &6857087520954542699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531946836594585115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebc004005c600e4ba9dbb255e17a4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Girl
+    sound: {fileID: 0}
+    sentences:
+    - "Hey, you. You're finally awake. You were trying to cross the border, right?
+      Walked right into that Orc ambush and got easily defeated.\r"
+    - "Well, it's your lucky day. I found you unconscious and I brought you here to
+      heal your wounds, now you should be ready to get revenge.\r"
+    - "Your friend's waiting for you outside, she must be worried sick about you!\r"
+    - "What? Your third friend? Sorry, I only found and rescued two people, you guys
+      basically owe me your life from now on.\r"
+    - "So, you want to climb Peek Galeer? Then you need to prepare for battle. A lot
+      of weird orcs and mutants have been swarming the place recently, but as long
+      as you stay together you should be fine.\r"
+    - "Now go, adventurer, good luck with your revenge! I'll be waiting for my cut
+      here when you return... Just kidding!\r"
 --- !u!1 &2625315890171242048
 GameObject:
   m_ObjectHideFlags: 0

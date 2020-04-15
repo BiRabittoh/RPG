@@ -46,6 +46,8 @@ public class BattleManager : MonoBehaviour
     [Header("Enemy Prefabs")]
     public GameObject p_orc;
     public GameObject p_mutant;
+    public GameObject p_brady;
+    public GameObject p_ganfaul;
     //public GameObject p_enemy1;
 
     [Header("Current fighters")]
@@ -262,6 +264,10 @@ public class BattleManager : MonoBehaviour
                 return Instantiate(p_orc, spot.position, spot.rotation);
             case "Mutant":
                 return Instantiate(p_mutant, spot.position, spot.rotation);
+            case "Brady":
+                return Instantiate(p_brady, spot.position, spot.rotation);
+            case "Ganfaul":
+                return Instantiate(p_ganfaul, spot.position, spot.rotation);
             default:
                 Debug.Log("Wrong name!");
                 return null;

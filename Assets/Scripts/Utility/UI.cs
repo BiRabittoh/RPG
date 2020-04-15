@@ -21,14 +21,16 @@ public static class UI
 
     public static void setSLButtonText(Button btn, int slot, bool load)
     {
-        Debug.Log("filling button " + btn.ToString());
+        //Debug.Log("filling button " + btn.ToString());
         int seconds;
         DateTime dt = GetSlotDateTime(slot, out seconds);
         if(dt == default)
         {
-            if(load){
+            if(load)
+            {
                 btn.enabled = false;
-            } else {
+            } else
+            {
                 btn.enabled = true;
             }
             btn.GetComponentInChildren<Text>().text = "Empty";

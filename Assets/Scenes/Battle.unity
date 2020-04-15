@@ -6361,6 +6361,9 @@ MonoBehaviour:
   p_orc: {fileID: 6819439329346995293, guid: f2797a6a1e29df0418a64a5c5ecb739e, type: 3}
   p_mutant: {fileID: 1765769505958022601, guid: a4054061ea4ee2c4492a160462b4516a,
     type: 3}
+  p_brady: {fileID: 7495735790540304316, guid: b903eb1d22a0d6746b34551d25236725, type: 3}
+  p_ganfaul: {fileID: 7495735790540304316, guid: b903eb1d22a0d6746b34551d25236725,
+    type: 3}
   fighters: []
 --- !u!4 &2045373361
 Transform:

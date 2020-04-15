@@ -204,7 +204,7 @@ public class GameMaster : Singleton<GameMaster>
         return save;
     }
 
-    public void LoadManager(int cl, List<string> ke, int g, Dictionary<string, Stats> p,Inventory i, string f, Vector3 pos, Quaternion rot, float timerfloat)
+    public void LoadManager(int cl, List<string> ke, int g, Dictionary<string, Stats> p, Inventory i, string f, Vector3 pos, Quaternion rot, float timerfloat)
     {
         loaded = true;
         currentLevel = cl;

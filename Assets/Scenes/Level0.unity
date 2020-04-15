@@ -163,20 +163,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 62223613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e1de3b45e291714089648173c9d9f1b, type: 3}
+  m_Script: {fileID: 11500000, guid: cebc004005c600e4ba9dbb255e17a4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
     name: Archer
     sound: {fileID: 0}
     sentences:
-    - 'You really took your time, huh? And what about Boxer, where do you think he
-      is right now?
-
-      Welp, I''m sure he''ll show up eventually... He always does in the worst moment
-      possible.'
-    - Anyway, those pesky orcs'll pay for what they've done to us! Are you ready?
-      Let's get going then!
+    - "You really took your time, huh? And what about Boxer, where do you think he
+      is right now? Welp, I'm sure he'll show up eventually... He always does in the
+      worst moment possible.\r"
+    - "Anyway, those pesky orcs'll pay for what they've done to us! Are you ready?
+      Let's get going then!\r"
     - Archer joined your party.
 --- !u!1 &95955589
 GameObject:
@@ -10601,6 +10599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 0
   loaded: 0
+  currentLevel: 0
 --- !u!4 &672366414
 Transform:
   m_ObjectHideFlags: 0
@@ -15857,6 +15856,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db490d779116a5d42b480d64e32e1a48, type: 3}
+--- !u!1 &890126618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: dc7d39444c4aafc4ab481d6d1c939fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1683442190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &890126621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890126618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c385cff4540f51645bcc2eb727ae0d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Brady
+    sound: {fileID: 0}
+    sentences:
+    - I'M MAKING MAC AND CHEESE AND NOBODY CAN STOP ME
+  bossType: Brady
+--- !u!136 &890126622
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890126618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.09
+  m_Height: 4.31
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!136 &890126623
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890126618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.26403913
+  m_Height: 1.8447939
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9159892, z: 0}
 --- !u!1 &898210419
 GameObject:
   m_ObjectHideFlags: 0
@@ -17901,7 +17952,8 @@ PrefabInstance:
       propertyPath: dialogue.name
       value: Weird girl
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2531946836594585316, guid: 6ea33ca63163f4449b6ad81551de5999, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea33ca63163f4449b6ad81551de5999, type: 3}
 --- !u!4 &5834425759172371133
 Transform:
@@ -17937,6 +17989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572658437003, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6787417573680370642, guid: b9089e56c5ff80b419c7f4aba9c5c421,
         type: 3}
@@ -18122,6 +18179,106 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 113.8208
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572051480938, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572051480938, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572051480938, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572724126066, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572724126066, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417573623447929, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417573623447929, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417573623447929, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572908213791, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572908213791, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417573985224458, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417573985224458, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417573024008636, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417573024008636, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417573024008636, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572730057939, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417572730057939, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417571894261275, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417571894261275, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787417571894261275, guid: b9089e56c5ff80b419c7f4aba9c5c421,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9089e56c5ff80b419c7f4aba9c5c421, type: 3}

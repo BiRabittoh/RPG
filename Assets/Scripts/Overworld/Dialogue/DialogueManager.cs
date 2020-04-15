@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class DialogueManager : MonoBehaviour
 {
-    public bool alreadyTalking = false;
+    public NPC alreadyTalking = null;
     [Header("Dialogue Box")]
     public Animator animator;
     public Text nameText;
@@ -22,6 +22,9 @@ public class DialogueManager : MonoBehaviour
 
     private string sentence;
     private Queue<string> sentences;
+
+    public delegate void MyDelegate();
+    static public MyDelegate actionAfterDialogue;
 
 
     
@@ -45,22 +48,23 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(NPC npc)
     {
-        if(dialogue.sentences.Length == 0)
+        if(npc.dialogue.sentences.Length == 0)
         {
             return;
         }
-        alreadyTalking = true;
+        actionAfterDialogue += new MyDelegate(npc.actionAfterDialogue);
+        alreadyTalking = npc;
         setInputEnabled(false);
         endDialogue = false;
         animator.SetBool("IsOpen", true);
-        nameText.text = dialogue.name;
-        voiceClip = dialogue.sound;
+        nameText.text = npc.dialogue.name;
+        voiceClip = npc.dialogue.sound;
 
         sentences.Clear();
 
-        foreach(string sentence in dialogue.sentences)
+        foreach(string sentence in npc.dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -95,6 +99,8 @@ public class DialogueManager : MonoBehaviour
         setInputEnabled(true);
         UI.stopText();
         animator.SetBool("IsOpen", false);
+        actionAfterDialogue();
+        actionAfterDialogue = null;
         StartCoroutine(CoolDown(0.3f));
     }
 
@@ -121,6 +127,6 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator CoolDown(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        alreadyTalking = false;
+        alreadyTalking = null;
     }
 }

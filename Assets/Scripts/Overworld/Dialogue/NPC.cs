@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+public abstract class NPC : MonoBehaviour
 {
     private DialogueManager dm;
     private string colliderName;
     public Dialogue dialogue;
-
 
     private void Start()
     {
@@ -29,6 +28,8 @@ public class NPC : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        dm.StartDialogue(dialogue);
+        dm.StartDialogue(this);
     }
+
+    public abstract void actionAfterDialogue();
 }

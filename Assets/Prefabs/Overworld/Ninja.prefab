@@ -854,7 +854,6 @@ GameObject:
   m_Component:
   - component: {fileID: 930593615016250822}
   - component: {fileID: 7088703437182787772}
-  - component: {fileID: 4229293667042246602}
   - component: {fileID: 4229293667042246600}
   - component: {fileID: 4229293667042246603}
   m_Layer: 0
@@ -899,22 +898,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4229293667042246602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4229293667042246613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e1de3b45e291714089648173c9d9f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Ninja
-    sound: {fileID: 0}
-    sentences: []
 --- !u!136 &4229293667042246600
 CapsuleCollider:
   m_ObjectHideFlags: 0
