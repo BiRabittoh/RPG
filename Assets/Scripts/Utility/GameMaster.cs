@@ -42,15 +42,12 @@ public class GameMaster : Singleton<GameMaster>
     public int currentLevel = 0;
     
     private string[] partyNames = { "Paladin", "Archer", "Boxer", "Mage" };
-    private List<string> bossNames = new List<string>();
+    private List<string> bossNames = new List<string>{ "Brady", "Ganfaul" };
     private Stats tempStats;
     #endregion
 
     private void Start()
     {
-        bossNames.Add("Brady");
-        bossNames.Add("Ganfaul");
-
         //start timer
         timer = 0;
 
@@ -115,6 +112,8 @@ public class GameMaster : Singleton<GameMaster>
                 fighting = "";
                 killedEnemies = new List<string>();
             }
+            Debug.Log("battle ended. fighting=" + fighting + ", currentLevel: " + currentLevel + ", killedEnemies:");
+            killedEnemies.ForEach(Console.WriteLine);
             SceneManager.LoadScene("Level" + currentLevel);
         } else //Lost Battle
         {
