@@ -31,6 +31,7 @@ public class Heal : Ability
         }
         amount += (amount * 0.05);
         target.stats.HP += amount;
+        source.animator.SetTrigger("Heal");
         UI.ShowDamage(target, -(int)amount, false); //this should give a negative result
         output = true;
         return target + " recovered " + (int)amount + " HP.";
