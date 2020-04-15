@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Brady : BadGuy
 {
+    public Brady()
+    {
+        stats = new Stats("Brady");
+        description = "Son of the dark lord, he's not too bad.";
+
+        goldDrop = 150;
+        itemsDrop = new Inventory();
+        itemsDrop.generateItem(new ItemInfo(new BottledBlessing(), 1));
+
+        dead = defending = false;
+    }
+    
     public override string Combat_AI()
     {
         //attack a random goodGuy
@@ -18,15 +30,4 @@ public class Brady : BadGuy
         return str;
     }
 
-    public Brady()
-    {
-        stats = new Stats("Brady");
-        description = "Son of the dark lord, he's not too bad.";
-
-        goldDrop = 150;
-        itemsDrop = new Inventory();
-        itemsDrop.generateItem(new ItemInfo(new BottledBlessing(), 1));
-
-        dead = defending = false;
-    }
 }

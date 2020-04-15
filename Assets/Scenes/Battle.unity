@@ -6362,7 +6362,7 @@ MonoBehaviour:
   p_mutant: {fileID: 1765769505958022601, guid: a4054061ea4ee2c4492a160462b4516a,
     type: 3}
   p_brady: {fileID: 7495735790540304316, guid: b903eb1d22a0d6746b34551d25236725, type: 3}
-  p_ganfaul: {fileID: 7495735790540304316, guid: b903eb1d22a0d6746b34551d25236725,
+  p_ganfaul: {fileID: 7096024044178901063, guid: b003af1e5037d834da8f471c5e453f21,
     type: 3}
   fighters: []
 --- !u!4 &2045373361
