@@ -24,20 +24,11 @@ public class Brady : BadGuy
         Fighter target;
         do {
             res = Random.Range(1, 101);
-            Debug.Log(res);
             if (res < 70)
             {
                 output = true;
                 //attack
-                Fighter[] ggs = GameObject.Find("BattleManager").GetComponent<BattleManager>().getGuys(false); //TODO: try FindObjectOfType
-            
-                /*
-                List<Fighter> goodGuys = new List<Fighter>();
-                foreach(Fighter f in ggs){
-                    if(!f.dead)
-                        goodGuys.Add(f);
-                }
-                */
+                Fighter[] ggs = GameObject.FindObjectOfType<BattleManager>().getGuys(false);
 
                 target = ggs[Random.Range(0, ggs.Length)];
 

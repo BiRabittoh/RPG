@@ -23,8 +23,6 @@ public class GameMaster : Singleton<GameMaster>
     [Header("Inventory")]
     public int gold = 0;
     public Inventory inventory;
-    public bool loaded = false;
-
     public int currentLevel = 0;
     #endregion
     #region Private
@@ -124,25 +122,16 @@ public class GameMaster : Singleton<GameMaster>
             #region Battaglia vinta o ritorno all'overworld
             case "Level0":
             case "Level1":
-            case "Level2":
                 player = FindObjectOfType<NoJumpController>().gameObject;
                 
-                if (fighting == "") //first spawn
-                {
-                    if (!loaded)
-                    {
-                        lastPosition = player.transform.position;
-                        lastRotation = player.transform.rotation;
-                    }
-                }
-                else
+                if (fighting != "")
                 { //return from battle
                     foreach (string enemy in killedEnemies)
                     {
                         GameObject.Find(enemy).SetActive(false);
                     }
+                    player.transform.SetPositionAndRotation(lastPosition, lastRotation);
                 }
-                player.transform.SetPositionAndRotation(lastPosition, lastRotation);
                 break;
             #endregion
 
@@ -217,13 +206,12 @@ public class GameMaster : Singleton<GameMaster>
         save.rot2 = t.rotation.z;
         save.rot3 = t.rotation.w;
         save.timerfloat = timer;
-        Debug.Log("saving scene Level" + currentLevel + ", fighting: " + fighting);
+        //Debug.Log("saving scene Level" + currentLevel + ", fighting: " + fighting);
         return save;
     }
 
     public void LoadManager(int cl, List<string> ke, int g, Dictionary<string, Stats> p, Inventory i, string f, Vector3 pos, Quaternion rot, float timerfloat)
     {
-        loaded = true;
         currentLevel = cl;
         killedEnemies = ke;
         gold = g;
@@ -233,12 +221,11 @@ public class GameMaster : Singleton<GameMaster>
         lastPosition = pos;
         lastRotation = rot;
         timer = timerfloat;
-        Debug.Log("loading scene Level" + currentLevel + ", fighting: " + fighting);
+        //Debug.Log("loading scene Level" + currentLevel + ", fighting: " + fighting);
     }
 
     public void resetGame()
     {
-        loaded = false;
         currentLevel = 0;
         killedEnemies = new List<string>();
         gold = 0;
