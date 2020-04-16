@@ -18,16 +18,52 @@ public class Brady : BadGuy
     
     public override string Combat_AI()
     {
-        //attack a random goodGuy
-        Fighter[] ggs = GameObject.Find("BattleManager").GetComponent<BattleManager>().getGuys(false);
-        List<Ability> abs = stats.GetAbilities();
         bool output;
-        string str;
-        do
-        {
-            str = AbilityDB.Process(this, abs[Random.Range(0, abs.Count)], ggs[Random.Range(0, ggs.Length)], true, out output);
-        } while (output == false);
-        return str;
-    }
+        int res;
+        Ability ability;
+        Fighter target;
+        do {
+            res = Random.Range(1, 101);
+            Debug.Log(res);
+            if (res < 70)
+            {
+                output = true;
+                //attack
+                Fighter[] ggs = GameObject.Find("BattleManager").GetComponent<BattleManager>().getGuys(false); //TODO: try FindObjectOfType
+            
+                /*
+                List<Fighter> goodGuys = new List<Fighter>();
+                foreach(Fighter f in ggs){
+                    if(!f.dead)
+                        goodGuys.Add(f);
+                }
+                */
 
+                target = ggs[Random.Range(0, ggs.Length)];
+
+                if(res < 35)
+                {
+                    //basic
+                    ability = new Attack();
+                } else {
+                    //magic
+                    ability = new FireBall();
+                }
+            } else
+            {
+                //heal
+                ability = new HealGreat();
+                target = this;
+                if(this.stats.HP < this.stats.MaxHP)
+                {
+                    output = true;
+                } else {
+                    output = false;
+                }
+            }
+        } while (output == false);
+        
+        
+        return AbilityDB.Process(this, ability, target, true, out output);
+    }
 }
