@@ -157,6 +157,12 @@ public class GameMaster : Singleton<GameMaster>
     {
         return enemyType;
     }
+
+    public string GetTimerString(){
+        int seconds = Mathf.RoundToInt(timer % 60);
+        int minutes = Mathf.RoundToInt(seconds / 60);
+        return minutes.ToString("00") + ":" + seconds.ToString("00");
+    }
     #endregion
 
     #region Party Management

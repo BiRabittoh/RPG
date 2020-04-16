@@ -5,17 +5,27 @@ using UnityEngine.UI;
 
 public class EndGameManager : MonoBehaviour
 {
+    [Header("UI")]
     [SerializeField] private GameObject inputPanel = null;
     [SerializeField] private GameObject highscoresPanel = null;
     [SerializeField] private Text highscoreName = null;
     [SerializeField] private Text[] nameObjects = null;
     [SerializeField] private Text[] scoreObjects = null;
+    [SerializeField] private Text scoreText = null;
+    
+    [Header("Good Guys")]
+    [SerializeField] private GameObject[] goodGuys = null;
+
     private Leaderboard leaderboard;
     private int userScore;
     const int maxRecordsNumber = 4;
 
     void Start(){
-        userScore = GameMaster.Instance.gold;
+        GameMaster gm = GameMaster.Instance;
+        userScore = gm.gold;
+        string timeString = gm.GetTimerString();
+        //TODO: set text
+        scoreText.text = "You finished the game in " + timeString + "\nand you collected " + userScore + "g";
     }
 
     public void saveHighScore()

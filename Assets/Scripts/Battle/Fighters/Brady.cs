@@ -54,7 +54,6 @@ public class Brady : BadGuy
             }
         } while (output == false);
         
-        
         return AbilityDB.Process(this, ability, target, true, out output);
     }
 }
