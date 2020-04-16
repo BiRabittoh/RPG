@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0641e4d9e5773ba4ebe1d9a0c4a37eb6
+guid: 6975d416a639ce947a2388467747dbba
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: A_Leaning
+      name: Ninja_Leaning
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
