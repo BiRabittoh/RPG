@@ -12,9 +12,6 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private Text[] nameObjects = null;
     [SerializeField] private Text[] scoreObjects = null;
     [SerializeField] private Text scoreText = null;
-    
-    [Header("Good Guys")]
-    [SerializeField] private GameObject[] goodGuys = null;
 
     private Leaderboard leaderboard;
     private int userScore;

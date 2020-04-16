@@ -99,7 +99,8 @@ public class DialogueManager : MonoBehaviour
         setInputEnabled(true);
         UI.stopText();
         animator.SetBool("IsOpen", false);
-        actionAfterDialogue();
+        if(actionAfterDialogue != null)
+            actionAfterDialogue();
         actionAfterDialogue = null;
         StartCoroutine(CoolDown(0.3f));
     }

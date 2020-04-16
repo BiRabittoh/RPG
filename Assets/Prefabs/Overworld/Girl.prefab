@@ -774,15 +774,15 @@ MonoBehaviour:
     sentences:
     - "Hey, you. You're finally awake. You were trying to cross the border, right?
       Walked right into that Orc ambush and got easily defeated.\r"
-    - "Well, it's your lucky day. I found you unconscious and I brought you here to
-      heal your wounds, now you should be ready to get revenge.\r"
-    - "Your friend's waiting for you outside, she must be worried sick about you!\r"
-    - "What? Your third friend? Sorry, I only found and rescued two people, you guys
-      basically owe me your life from now on.\r"
-    - "So, you want to climb Peek Galeer? Then you need to prepare for battle. A lot
-      of weird orcs and mutants have been swarming the place recently, but as long
-      as you stay together you should be fine.\r"
-    - "Now go, adventurer, good luck with your revenge! I'll be waiting for my cut
+    - Well, it's your lucky day. I found you unconscious and I brought you here to
+      heal your wounds, now you should be ready to go.
+    - "What? You want to climb Peek Galeer? Then you need to prepare for battle. A
+      lot of weird orcs and mutants have been swarming the place recently, but as
+      long as you stay together you should be fine.\r"
+    - 'The real problem would be that demon Brady... He''s the cause of all our worries:
+      he spawned all these orcs and mutants just for fun!'
+    - Just be careful if you meet him, he looks stupid but he's pretty strong in battle.
+    - "Now go, adventurer, good luck with your revenge!\nI'll be waiting for my cut
       here when you return... Just kidding!\r"
 --- !u!1 &2625315890171242048
 GameObject:

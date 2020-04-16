@@ -856,6 +856,7 @@ GameObject:
   - component: {fileID: 7088703437182787772}
   - component: {fileID: 4229293667042246600}
   - component: {fileID: 4229293667042246603}
+  - component: {fileID: 5024940287250160533}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: Untagged
@@ -926,6 +927,26 @@ CapsuleCollider:
   m_Height: 1.4452276
   m_Direction: 1
   m_Center: {x: 0, y: 0.69036865, z: 0.34213257}
+--- !u!114 &5024940287250160533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229293667042246613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebc004005c600e4ba9dbb255e17a4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Weird Ninja
+    sound: {fileID: 0}
+    sentences:
+    - Ayy, be safe out there kiddo.
+    - 'Huh? Dude, that girl is my wife!
+
+      Don''t get any weird ideas or I''ll kick your ass into the moon!'
 --- !u!1 &4287883664195207820
 GameObject:
   m_ObjectHideFlags: 0
