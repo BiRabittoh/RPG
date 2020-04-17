@@ -7,7 +7,6 @@ public class Attack : Ability
     //constructor
     public Attack()
     {
-        dbName = "Attack";
         guiName = "Attack";
         hasTarget = true;
         ow_usable = false;

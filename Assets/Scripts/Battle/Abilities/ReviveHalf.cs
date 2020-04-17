@@ -7,7 +7,6 @@ public class ReviveHalf : Ability
 {
     public ReviveHalf()
     {
-        dbName = "ReviveHalf";
         guiName = "Blessing";
         hasTarget = true;
         ow_usable = true;

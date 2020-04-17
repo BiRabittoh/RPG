@@ -6,7 +6,6 @@ public class FireBall : Ability
 {
     public FireBall()
     {
-        dbName = "FireBall";
         guiName = "Fireball";
         hasTarget = true;
         ow_usable = false;
@@ -22,8 +21,7 @@ public class FireBall : Ability
         string str = source + " throws a fireball at " + target + "!";
         double damage = 0;
 
-        //TODO: number logic
-        damage = 300;
+        damage = source.stats.MaxMP * 2 / 3;
 
         damage += (damage * UnityEngine.Random.Range(-5, 5) / 100);
         target.stats.HP -= damage;

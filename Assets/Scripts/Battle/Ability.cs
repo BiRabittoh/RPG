@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public abstract class Ability : Action
 {
-    public string dbName;
     public string guiName;
     public bool hasTarget;
     public double MP_cost;

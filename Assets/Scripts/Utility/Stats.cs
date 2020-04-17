@@ -100,7 +100,7 @@ public class Stats
                 break;
             case "Mage":
                 hp = maxHP = 375;
-                mp = maxMP = 600;
+                mp = maxMP = 450;
                 atk = maxATK = 30;
                 def = maxDEF = 50;
                 agl = maxAGL = 32;
@@ -127,7 +127,7 @@ public class Stats
                 break;
             case "Brady":
                 hp = maxHP = 1000;
-                mp = maxMP = 500;
+                mp = maxMP = 600;
                 atk = maxATK = 50;
                 def = maxDEF = 60;
                 agl = maxAGL = 30;
@@ -136,8 +136,8 @@ public class Stats
                 abilities.Add(new HealBig());
                 break;
             case "Ganfaul":
-                hp = maxHP = 2000;
-                mp = maxMP = 700;
+                hp = maxHP = 2500;
+                mp = maxMP = 660;
                 atk = maxATK = 55;
                 def = maxDEF = 60;
                 agl = maxAGL = 32;

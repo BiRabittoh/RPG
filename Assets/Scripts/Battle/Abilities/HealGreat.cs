@@ -7,7 +7,6 @@ public class HealGreat : Heal
 {
     public HealGreat()
     {
-        dbName = "HealGreat";
         guiName = "Giga Heal";
         hasTarget = true;
         ow_usable = true;

@@ -7,7 +7,6 @@ public class ReviveFull : Ability
 {
     public ReviveFull()
     {
-        dbName = "ReviveFull";
         guiName = "Miracle";
         hasTarget = true;
         ow_usable = true;

@@ -9,7 +9,6 @@ public class Defend : Ability
     //constructor
     public Defend()
     {
-        dbName = "Defend";
         guiName = "Defend";
         hasTarget = false;
         ow_usable = false;

@@ -9,7 +9,6 @@ public class Heal : Ability
 
     public Heal()
     {
-        dbName = "Heal";
         guiName = "Heal";
         hasTarget = true;
         ow_usable = true;
