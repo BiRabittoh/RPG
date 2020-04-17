@@ -110,7 +110,7 @@ public class Stats
                 abilities.Add(new ReviveFull());
                 break;
             case "Orc":
-                hp = maxHP = 300;
+                hp = maxHP = 700;
                 mp = maxMP = 0;
                 atk = maxATK = 40;
                 def = maxDEF = 55;
@@ -118,7 +118,7 @@ public class Stats
                 lck = maxLCK = 15;
                 break;
             case "Mutant":
-                hp = maxHP = 500;
+                hp = maxHP = 700;
                 mp = maxMP = 0;
                 atk = maxATK = 43;
                 def = maxDEF = 60;
@@ -126,7 +126,7 @@ public class Stats
                 lck = maxLCK = 20;
                 break;
             case "Brady":
-                hp = maxHP = 1000;
+                hp = maxHP = 1500;
                 mp = maxMP = 600;
                 atk = maxATK = 50;
                 def = maxDEF = 60;
@@ -136,7 +136,7 @@ public class Stats
                 abilities.Add(new HealBig());
                 break;
             case "Ganfaul":
-                hp = maxHP = 2500;
+                hp = maxHP = 2750;
                 mp = maxMP = 660;
                 atk = maxATK = 55;
                 def = maxDEF = 60;
