@@ -38,7 +38,7 @@ public class MenuManager : MonoBehaviour
     #region Menu buttons
     public void NewGame()
     {
-        SceneManager.LoadScene("Level0");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void LoadGame()

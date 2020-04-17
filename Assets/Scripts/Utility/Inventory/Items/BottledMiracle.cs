@@ -11,6 +11,6 @@ public class BottledMiracle : Item
         price = 350;
         effect = new ReviveFull();
         consumable = true;
-        description = "Looks like somebody managed to fit a whole miracle inside this small bottle.";
+        description = "Somebody managed to fit a whole miracle inside this bottle.";
     }
 }

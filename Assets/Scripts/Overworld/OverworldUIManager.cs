@@ -17,12 +17,14 @@ public class OverworldUIManager : UIManager
     public int currentPanel = 0;
 
     //inventory info
-    [Header("Set panels here")]
+    [Header("Set stuff here")]
     [SerializeField] private GameObject partyObject = null;
     [SerializeField] private List<GoodGuy> party;
     [SerializeField] private GameObject pause_panel = null;
     [SerializeField] private GameObject[] panel = null;
     [SerializeField] private Text goldText = null;
+    [SerializeField] private AudioManager audioManager = null;
+
     public Text desc_text = null;
     public enum Panel
     {
@@ -42,6 +44,7 @@ public class OverworldUIManager : UIManager
         hideAllPanels();
         if (onOff)
         {
+            audioManager.playButtonSound(3);
             UI.showCursor(true);
             pause_panel.SetActive(true);
         } else
@@ -224,14 +227,20 @@ public class OverworldUIManager : UIManager
 
     private void selectedSource(GoodGuy s)
     {
+        //TODO: better logic without gameobject.find
+        GameObject tmp = GameObject.Find("inventory_target_btns");
+        if(tmp)
+            tmp.SetActive(false);
+        tmp = GameObject.Find("abilities_target_btns");
+        if(tmp)
+            tmp.SetActive(false);
+
         currentSource = s;
         Transform t = panel[(int)Panel.Abilities].transform.GetChild(2);
-
         int i = 0;
         Button btn;
         if (s != null)
         {
-            
             foreach (Ability a in s.stats.GetAbilities())
             {
                 if (i > t.childCount)
@@ -239,6 +248,7 @@ public class OverworldUIManager : UIManager
                 if (a.ow_usable)
                 {
                     btn = t.GetChild(i).GetComponent<Button>();
+                    btn.enabled = true;
                     btn.gameObject.SetActive(true);
                     btn.GetComponentInChildren<Text>().text = a.ToString();
                     btn.onClick.RemoveAllListeners();
