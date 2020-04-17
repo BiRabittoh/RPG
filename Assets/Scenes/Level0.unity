@@ -15712,7 +15712,12 @@ MonoBehaviour:
     name: Brady
     sound: {fileID: 0}
     sentences:
-    - I'M MAKING MAC AND CHEESE AND NOBODY CAN STOP ME
+    - 'Oh, some more worthless brats...
+
+      What do you think you can do against me?'
+    - 'You know I''m the Dark Prince, right? My power can''t be matched!
+
+      But if you still don''t believe me, I will give you a demonstration right now!'
   bossType: Brady
 --- !u!136 &890126622
 CapsuleCollider:

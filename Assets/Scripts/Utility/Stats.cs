@@ -72,7 +72,7 @@ public class Stats
             case "Paladin":
                 hp = maxHP = 500;
                 mp = maxMP = 0;
-                atk = maxATK = 50;
+                atk = maxATK = 40;
                 def = maxDEF = 63;
                 agl = maxAGL = 30;
                 lck = maxLCK = 15;
@@ -81,7 +81,7 @@ public class Stats
             case "Archer":
                 hp = maxHP = 400;
                 mp = maxMP = 400;
-                atk = maxATK = 40;
+                atk = maxATK = 30;
                 def = maxDEF = 50;
                 agl = maxAGL = 35;
                 lck = maxLCK = 40;
@@ -92,16 +92,16 @@ public class Stats
             case "Boxer":
                 hp = maxHP = 600;
                 mp = maxMP = 0;
-                atk = maxATK = 30;
+                atk = maxATK = 50;
                 def = maxDEF = 80;
-                agl = maxAGL = 28;
-                lck = maxLCK = 25;
+                agl = maxAGL = 12;
+                lck = maxLCK = 5;
                 abilities.Add(new Defend());
                 break;
             case "Mage":
                 hp = maxHP = 375;
                 mp = maxMP = 450;
-                atk = maxATK = 30;
+                atk = maxATK = 5;
                 def = maxDEF = 50;
                 agl = maxAGL = 32;
                 lck = maxLCK = 5;
