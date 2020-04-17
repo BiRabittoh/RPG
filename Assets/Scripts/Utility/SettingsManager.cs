@@ -15,6 +15,8 @@ public class SettingsManager : MonoBehaviour
     public Slider musicSlider, sfxSlider;
     public Slider textSlider, battleSlider;
     public AudioMixer mixer;
+    private new AudioSource audio;
+    [SerializeField] AudioClip sfxTest = null;
 
     public void SetMusicVolume(float sliderValue)
     {
@@ -24,6 +26,8 @@ public class SettingsManager : MonoBehaviour
 
     public void SetSfxVolume(float sliderValue)
     {
+        if(sfxTest && !audio.isPlaying)
+            audio.PlayOneShot(sfxTest);
         mixer.SetFloat("SfxVolume", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("SfxVolume", sliderValue);
     }
@@ -43,7 +47,7 @@ public class SettingsManager : MonoBehaviour
     public void Start()
     {
         gm = GameMaster.Instance;
-
+        audio = GetComponent<AudioSource>();
         //restore playerprefs
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 0.75f);

@@ -328,7 +328,6 @@ public class OverworldUIManager : UIManager
                     updateSTPanel(panel[(int)Panel.Abilities].transform.GetChild(0), party, true);
                     break;
                 default:
-                    Debug.Log("You shouldn't be here.");
                     break;
             }
             
