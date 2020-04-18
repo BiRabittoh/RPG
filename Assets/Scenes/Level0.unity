@@ -17467,13 +17467,18 @@ PrefabInstance:
       objectReference: {fileID: 2553804876603214695}
     - target: {fileID: 1559249301298402843, guid: 0b8a8754c45d39b44970a73a71b30aa1,
         type: 3}
-      propertyPath: offset.y
-      value: 1.7
+      propertyPath: offset.x
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1559249301298402843, guid: 0b8a8754c45d39b44970a73a71b30aa1,
         type: 3}
-      propertyPath: offset.x
-      value: 5
+      propertyPath: offset.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559249301298402843, guid: 0b8a8754c45d39b44970a73a71b30aa1,
+        type: 3}
+      propertyPath: offset.y
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7255813635939471790, guid: 0b8a8754c45d39b44970a73a71b30aa1,
         type: 3}

@@ -49,9 +49,7 @@ public class GameMaster : Singleton<GameMaster>
 
         //create inventory
         inventory = new Inventory();
-        inventory.generateItem(new ItemInfo(new BottledBlessing(), 2));
-        inventory.generateItem(new ItemInfo(new BottledMiracle(), 1));
-        inventory.generateItem(new ItemInfo(new Potion(), 1));
+        inventory.generateItem(new ItemInfo(new BottledBlessing(), 1));
 
         SceneManager.sceneLoaded += sceneChanged;
     }

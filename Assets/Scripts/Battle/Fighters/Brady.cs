@@ -18,6 +18,7 @@ public class Brady : BadGuy
     
     public override string Combat_AI()
     {
+        this.stats.MP = this.stats.MaxMP;
         bool output;
         int res;
         Ability ability;

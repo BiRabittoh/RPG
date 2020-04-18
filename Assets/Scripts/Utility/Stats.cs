@@ -80,14 +80,13 @@ public class Stats
                 break;
             case "Archer":
                 hp = maxHP = 400;
-                mp = maxMP = 400;
+                mp = maxMP = 200;
                 atk = maxATK = 30;
                 def = maxDEF = 50;
                 agl = maxAGL = 35;
                 lck = maxLCK = 40;
                 abilities.Add(new Defend());
                 abilities.Add(new Heal());
-                abilities.Add(new ReviveHalf());
                 break;
             case "Boxer":
                 hp = maxHP = 600;
@@ -105,9 +104,10 @@ public class Stats
                 def = maxDEF = 50;
                 agl = maxAGL = 32;
                 lck = maxLCK = 5;
+                abilities.Add(new Defend());
                 abilities.Add(new HealBig());
                 abilities.Add(new FireBall());
-                abilities.Add(new ReviveFull());
+                abilities.Add(new ReviveHalf());
                 break;
             case "Orc":
                 hp = maxHP = 700;
@@ -136,7 +136,7 @@ public class Stats
                 abilities.Add(new HealBig());
                 break;
             case "Ganfaul":
-                hp = maxHP = 2750;
+                hp = maxHP = 2000;
                 mp = maxMP = 660;
                 atk = maxATK = 55;
                 def = maxDEF = 60;
