@@ -19,11 +19,14 @@ public static class UI
     public static float BattleSpeed = PlayerPrefs.GetFloat("BattleSpeed", 1f);
     public static bool displaying_text = false;
 
+    public static string getPlayTimeString(float timer){
+        return Mathf.FloorToInt(timer / 60).ToString("00") + ":" + Mathf.RoundToInt(timer % 60).ToString("00");
+    }
     public static void setSLButtonText(Button btn, int slot, bool load)
     {
         //Debug.Log("filling button " + btn.ToString());
-        int seconds;
-        DateTime dt = GetSlotDateTime(slot, out seconds);
+        float timer;
+        DateTime dt = GetSlotDateTime(slot, out timer);
         if(dt == default)
         {
             if(load)
@@ -36,13 +39,13 @@ public static class UI
             btn.GetComponentInChildren<Text>().text = "Empty";
         } else
         {
-            btn.GetComponentInChildren<Text>().text = dt.ToString(SaveDateFormat) + "\nPlay time " + Mathf.Floor(seconds / 60).ToString("00") + ":" + seconds.ToString("00");
+            btn.GetComponentInChildren<Text>().text = dt.ToString(SaveDateFormat) + "\nPlay time " + getPlayTimeString(timer);
             btn.enabled = true;
         }
         
     }
 
-    public static DateTime GetSlotDateTime(int slot, out int seconds)
+    public static DateTime GetSlotDateTime(int slot, out float timer)
     {
         if (File.Exists(Application.persistentDataPath + "/game" + slot + ".save"))
         {
@@ -50,12 +53,12 @@ public static class UI
             FileStream file = File.Open(Application.persistentDataPath + "/game" + slot + ".save", FileMode.Open);
             Save save = (Save)bf.Deserialize(file);
             file.Close();
-            seconds = Mathf.RoundToInt(save.timerfloat % 60);
+            timer = save.timerfloat;
             return save.timestamp;
         }
         else
         {
-            seconds = 0;
+            timer = 0;
             return default;
         }
     }

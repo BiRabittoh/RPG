@@ -31,6 +31,7 @@ public class GameMaster : Singleton<GameMaster>
     private GameObject player;
     private List<string> killedEnemies = new List<string>();
     private string fighting = "";
+    private bool loaded = false;
     private string enemyType;
     private Vector3 lastPosition;
     private Quaternion lastRotation;
@@ -121,14 +122,14 @@ public class GameMaster : Singleton<GameMaster>
             case "Level0":
             case "Level1":
                 player = FindObjectOfType<NoJumpController>().gameObject;
-                
-                if (fighting != "")
-                { //return from battle
-                    foreach (string enemy in killedEnemies)
-                    {
-                        GameObject.Find(enemy).SetActive(false);
-                    }
+
+                if(loaded || fighting != ""){
                     player.transform.SetPositionAndRotation(lastPosition, lastRotation);
+                    loaded = false;
+                }
+                foreach (string enemy in killedEnemies)
+                {
+                    GameObject.Find(enemy).SetActive(false);
                 }
                 break;
             #endregion
@@ -156,10 +157,8 @@ public class GameMaster : Singleton<GameMaster>
         return enemyType;
     }
 
-    public string GetTimerString(){
-        int seconds = Mathf.RoundToInt(timer % 60);
-        int minutes = Mathf.RoundToInt(seconds / 60);
-        return minutes.ToString("00") + ":" + seconds.ToString("00");
+    public string GetPlayTime(){
+        return UI.getPlayTimeString(timer);
     }
     #endregion
 
@@ -216,6 +215,7 @@ public class GameMaster : Singleton<GameMaster>
 
     public void LoadManager(int cl, List<string> ke, int g, Dictionary<string, Stats> p, Inventory i, string f, Vector3 pos, Quaternion rot, float timerfloat)
     {
+        loaded = true;
         currentLevel = cl;
         killedEnemies = ke;
         gold = g;

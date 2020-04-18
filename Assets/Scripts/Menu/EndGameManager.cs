@@ -20,9 +20,9 @@ public class EndGameManager : MonoBehaviour
     void Start(){
         GameMaster gm = GameMaster.Instance;
         userScore = gm.gold;
-        string timeString = gm.GetTimerString();
         //TODO: set text
-        scoreText.text = "You finished the game in " + timeString + "\nand you collected " + userScore + "g";
+        scoreText.text = "You finished the game in " + gm.GetPlayTime() + "\nand you collected " + gm.gold + "g";
+        gm.resetGame();
     }
 
     public void saveHighScore()
