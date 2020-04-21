@@ -3426,7 +3426,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "This game was developed by Marco Andronaco for the Digital Games Development
     (DGD) class in UniCT.\n\nMixamo \t\t   Models, animations\nSketchFab\t\t\t\t\t
-    \  Models\nCkwnce\t\t\t\t\t\t\t Music\nNintendo\t\t\t\t\t\t Music\nBartolomeo
+    \  Models\nCkwnce\t\t\t\t\t\t\t Music\nGabriel Ardini\t\t\t  Game Icon\nBartolomeo
     Caruso\t\t  Testing"
 --- !u!222 &1829720840
 CanvasRenderer:

@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] buttonSounds = null;
     private AudioSource audioSource;
 
-    public void playButtonSound(int index){
+    public void playButtonSound(int index) {
         if(index <= buttonSounds.Length)
             audioSource.PlayOneShot(buttonSounds[index]);
     }

@@ -28,7 +28,7 @@ public class GameMaster : Singleton<GameMaster>
     #region Private
     private float timer;
     private BattleManager battle;
-    private GameObject player;
+    private Transform player;
     private List<string> killedEnemies = new List<string>();
     private string fighting = "";
     private bool loaded = false;
@@ -64,9 +64,9 @@ public class GameMaster : Singleton<GameMaster>
     {
         fighting = enemyName;
         this.enemyType = enemyType;
-        player = GameObject.Find("Player");
-        lastPosition = player.transform.position;
-        lastRotation = player.transform.rotation;
+        player = FindObjectOfType<NoJumpController>().transform;
+        lastPosition = player.position;
+        lastRotation = player.rotation;
         
         SceneManager.LoadScene("Battle");
     }
@@ -95,11 +95,14 @@ public class GameMaster : Singleton<GameMaster>
 
             if(bossNames.Contains(fighting)){
                 currentLevel++;
-                fighting = "";
                 killedEnemies = new List<string>();
             }
-            Debug.Log("battle ended. fighting=" + fighting + ", currentLevel: " + currentLevel + ", killedEnemies:");
-            killedEnemies.ForEach(Console.WriteLine);
+            Debug.Log("battle ended. fighting=" + fighting + ", currentLevel: " + currentLevel + ", loaded:" + loaded);
+            Debug.Log("killed enemies:");
+            foreach (string str in killedEnemies)
+            {
+                Debug.Log(str);
+            }
             SceneManager.LoadScene("Level" + currentLevel);
         } else //Lost Battle
         {
@@ -121,10 +124,10 @@ public class GameMaster : Singleton<GameMaster>
             #region Battaglia vinta o ritorno all'overworld
             case "Level0":
             case "Level1":
-                player = FindObjectOfType<NoJumpController>().gameObject;
+                player = FindObjectOfType<NoJumpController>().transform;
 
                 if(loaded || fighting != ""){
-                    player.transform.SetPositionAndRotation(lastPosition, lastRotation);
+                    player.SetPositionAndRotation(lastPosition, lastRotation);
                     loaded = false;
                 }
                 foreach (string enemy in killedEnemies)
