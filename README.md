@@ -1,4 +1,4 @@
-# Remnants of Peek Galeer
+# Remnants of Peak Galeer
 
 Remnants of Peak Galeer è stato realizzato da Marco Andronaco (O46001282) per il corso di Sviluppo Giochi Digitali.
 
