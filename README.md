@@ -2,7 +2,7 @@
 
 Remnants of Peak Galeer è stato realizzato da Marco Andronaco (O46001282) per il corso di Sviluppo Giochi Digitali.
 
-## Punti realizzati:
+## Punti realizzati
 * Splash Screen (logo UniCT)
 * Icona gioco
 * Load Game
@@ -30,7 +30,7 @@ Remnants of Peak Galeer è stato realizzato da Marco Andronaco (O46001282) per i
 * User Interface
 * Particelle (Fuoco nel menu, torcia nella casa iniziale)
 
-## NOTE:
+## Note
 * Ai fini di riutilizzo del codice, ogni item è implementato come una sorta di "abilità consumabile".
 * Il codice è scalabile e funziona con un numero variabile di party members che va da 1 a 4, in base ai contenuti di GameMaster.partyNames.
 * Tutte le battle stats sono definite in un costruttore di Stats; questo permette di poterle confrontare e bilanciare facilmente tra loro.
